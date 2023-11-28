@@ -55,6 +55,19 @@ void setup() {
 
   // Serial.begin(9600);
   Blynk.begin(auth, ssid, password);
+
+  // initial state
+  digitalWrite(lamp1, LOW);
+  digitalWrite(lamp2, LOW);
+  digitalWrite(socket1, LOW);
+  digitalWrite(socket2, LOW);
+
+  Blynk.virtualWrite(LAMP1_PIN, LOW); // Set the initial state of the switch
+  Blynk.syncVirtual(LAMP1_PIN);
+  Blynk.virtualWrite(LAMP2_PIN, LOW); // Set the initial state of the switch
+  Blynk.syncVirtual(LAMP2_PIN);
+  Blynk.virtualWrite(SOCKET1_PIN, LOW); // Set the initial state of the switch
+  Blynk.syncVirtual(SOCKET1_PIN);
 }
 
 void loop() {
