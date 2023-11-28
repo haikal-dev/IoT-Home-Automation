@@ -52,7 +52,8 @@ void setup() {
   Serial.println("\nConnected to WiFi");
   Serial.print("IP Address: ");
   Serial.println(WiFi.localIP());
-  
+
+  // Serial.begin(9600);
   Blynk.begin(auth, ssid, password);
 }
 
