@@ -21,7 +21,7 @@ char auth[] = "<BLYNK_TOKEN>";
 //outputs
 // const uint8_t lamp1 = 14;
 const uint8_t lamp1 = 5;
-const uint8_t lamp2 = 12;
+const uint8_t lamp2 = 10;
 const uint8_t lamp3 = 4;
 const uint8_t fan1 = 13;
 
@@ -67,7 +67,7 @@ void setup() {
 
   Blynk.virtualWrite(LAMP1_PIN, LOW); // Set the initial state of the switch
   Blynk.syncVirtual(LAMP1_PIN);
-  Blynk.virtualWrite(LAMP2_PIN, LOW); // Set the initial state of the switch
+  Blynk.virtualWrite(LAMP2_PIN, 0); // Set the initial state of the switch
   Blynk.syncVirtual(LAMP2_PIN);
   Blynk.virtualWrite(LAMP3_PIN, LOW); // Set the initial state of the switch
   Blynk.syncVirtual(LAMP3_PIN);
