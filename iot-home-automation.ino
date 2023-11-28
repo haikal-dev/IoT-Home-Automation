@@ -15,10 +15,30 @@ const char *ssid = "<WIFI_NAME>";
 const char *password = "<WIFI_PASSWORD>";
 
 // Replace with your Blynk authentication token
-char auth[] = "<BLYNK_TOKEN";
+char auth[] = "<BLYNK_TOKEN>";
+
+// outputs
+const uint8_t lamp1 = 14;
+const uint8_t lamp2 = 12;
+const uint8_t socket1 = 13;
+const uint8_t socket2 = 15;
+
+// inputs
+const uint8_t PIR = D0;
+
+int count = 0;
 
 void setup() {
   Serial.begin(9600);
+
+  // outputs
+  pinMode(lamp1, OUTPUT);
+  pinMode(lamp2, OUTPUT);
+  pinMode(socket1, OUTPUT);
+  pinMode(socket2, OUTPUT);
+
+  // inputs
+  pinMode(PIR, INPUT);
 
   // Connect to Wi-Fi
   WiFi.begin(ssid, password);
