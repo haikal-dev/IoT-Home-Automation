@@ -73,4 +73,71 @@ void setup() {
 void loop() {
   // Your main code goes here
   Blynk.run();
+
+  // int pir_value = digitalRead(PIR);
+  
+  // if(pir_value == HIGH) {
+  //   Serial.print("Motion detected: ");
+  //   Serial.println(count);
+
+  //   Blynk.virtualWrite(LAMP1_PIN, HIGH); // Set the initial state of the switch
+  //   Blynk.syncVirtual(LAMP1_PIN);
+  //   Blynk.virtualWrite(LAMP2_PIN, HIGH); // Set the initial state of the switch
+  //   Blynk.syncVirtual(LAMP2_PIN);
+  //   Blynk.virtualWrite(SOCKET1_PIN, HIGH); // Set the initial state of the switch
+  //   Blynk.syncVirtual(SOCKET1_PIN);
+
+  //   delay(1000);
+  //   count++;
+  // }
+
+  // else {
+  //   Blynk.virtualWrite(LAMP1_PIN, LOW); // Set the initial state of the switch
+  //   Blynk.syncVirtual(LAMP1_PIN);
+  //   Blynk.virtualWrite(LAMP2_PIN, LOW); // Set the initial state of the switch
+  //   Blynk.syncVirtual(LAMP2_PIN);
+  //   Blynk.virtualWrite(SOCKET1_PIN, LOW); // Set the initial state of the switch
+  //   Blynk.syncVirtual(SOCKET1_PIN);
+  //   delay(1000);
+  // }
+}
+
+// Blynk virtual pin handler
+BLYNK_WRITE(LAMP1_PIN) {
+  int switchState = param.asInt(); // Get the state of the switch
+
+  // Toggle the LED based on the switch state
+  if (switchState == HIGH) {
+    Serial.println("Lamp 1 ON");
+    digitalWrite(lamp1, LOW); // Turn ON the LED
+  } else {
+    Serial.println("Lamp 1 OFF");
+    digitalWrite(lamp1, HIGH); // Turn OFF the LED
+  }
+}
+
+BLYNK_WRITE(LAMP2_PIN) {
+  int switchState = param.asInt(); // Get the state of the switch
+
+  // Toggle the LED based on the switch state
+  if (switchState == HIGH) {
+    Serial.println("Lamp 2 ON");
+    digitalWrite(lamp2, LOW); // Turn ON the LED
+  } else {
+    Serial.println("Lamp 2 OFF");
+    digitalWrite(lamp2, HIGH); // Turn OFF the LED
+  }
+}
+
+BLYNK_WRITE(SOCKET1_PIN) {
+  int switchState = param.asInt(); // Get the state of the switch
+
+  // Toggle the LED based on the switch state
+  if (switchState == HIGH) {
+    Serial.println("Socket 1 ON");
+    digitalWrite(socket1, LOW); // Turn ON the LED
+  } else {
+    Serial.println("Socket 1 OFF");
+    digitalWrite(socket1, HIGH); // Turn OFF the LED
+  }
 }
