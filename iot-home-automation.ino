@@ -2,6 +2,11 @@
 #define BLYNK_TEMPLATE_NAME "IoT Home Automation"
 #define BLYNK_AUTH_TOKEN "<BLYNK_TOKEN>"
 
+// Virtual Pin for Blynk switch
+#define LAMP1_PIN V0
+#define LAMP2_PIN V1
+#define SOCKET1_PIN V2
+
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
 
